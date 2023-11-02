@@ -6,13 +6,12 @@ public class PlayerMovementV1 : MonoBehaviour
 {
     [Header("Movement")]
     public float moveSpeed;
-
     public float groundDrag;
-
     public float jumpForce;
     public float jumpCooldown;
     public float airMultiplier;
     bool readyToJump;
+    public Camera cam;
 
     [HideInInspector] public float walkSpeed;
     [HideInInspector] public float sprintSpeed;
@@ -34,23 +33,30 @@ public class PlayerMovementV1 : MonoBehaviour
 
     Rigidbody rb;
 
+    // Magic numbers
+    float raycastLength = -0.13f;
+    float forceMultiplier = 10f;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
 
         readyToJump = true;
+
+        // lock and hide the cursor
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     private void Update()
     {
         // ground check
-        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.3f, whatIsGround);
+        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + raycastLength, whatIsGround);
 
         MyInput();
         SpeedControl();
 
-        // handle drag
         if (grounded)
             rb.drag = groundDrag;
         else
@@ -81,15 +87,24 @@ public class PlayerMovementV1 : MonoBehaviour
     private void MovePlayer()
     {
         // calculate movement direction
-        moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
+        Vector3 camForward = orientation.forward;
+        Vector3 camRight = orientation.right;
 
-        // on ground
-        if (grounded)
-            rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
+        camForward.y = 0;
+        camRight.y = 0;
 
-        // in air
-        else if (!grounded)
-            rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
+        camForward.Normalize();
+        camRight.Normalize();
+
+        moveDirection = camForward * verticalInput + camRight * horizontalInput;
+        moveDirection.Normalize(); // Normalize once
+
+        // apply forces
+        float multiplier = grounded ? 1f : airMultiplier;
+        rb.AddForce(moveDirection * moveSpeed * forceMultiplier * multiplier, ForceMode.Force);
+
+        // rotate the player to face the same direction as the camera
+        // transform.rotation = Quaternion.Euler(0f, cam.transform.eulerAngles.y, 0f);
     }
 
     private void SpeedControl()
@@ -111,6 +126,7 @@ public class PlayerMovementV1 : MonoBehaviour
 
         rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
     }
+
     private void ResetJump()
     {
         readyToJump = true;
