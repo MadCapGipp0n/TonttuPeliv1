@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PMovement : MonoBehaviour //muutettu PlayerMovement to PMovement
 {
     public CharacterController controller;
 
@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
 
     Vector3 velocity;
     bool isGrounded;
-    void Update()
+    void update() // muutettu Update to update
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
