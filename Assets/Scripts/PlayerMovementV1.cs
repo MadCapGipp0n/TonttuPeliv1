@@ -12,6 +12,8 @@ public class PlayerMovementV1 : MonoBehaviour
     public float airMultiplier;
     bool readyToJump;
     public Camera cam;
+    private Animator animator;
+
 
     [HideInInspector] public float walkSpeed;
     [HideInInspector] public float sprintSpeed;
@@ -39,6 +41,7 @@ public class PlayerMovementV1 : MonoBehaviour
 
     private void Start()
     {
+        animator = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
 
@@ -66,6 +69,16 @@ public class PlayerMovementV1 : MonoBehaviour
     private void FixedUpdate()
     {
         MovePlayer();
+        if (moveDirection != Vector3.zero)
+        {
+            animator.SetBool("isMoving", true);
+        }
+        else
+        {
+            animator.SetBool("isMoving", false);
+        }
+
+
     }
 
     private void MyInput()
@@ -79,6 +92,10 @@ public class PlayerMovementV1 : MonoBehaviour
             readyToJump = false;
 
             Jump();
+            animator.SetTrigger("Jump");
+            animator.ResetTrigger("Jump");
+
+
 
             Invoke(nameof(ResetJump), jumpCooldown);
         }
