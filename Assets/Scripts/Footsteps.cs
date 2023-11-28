@@ -25,14 +25,7 @@ public class Footsteps : MonoBehaviour
     void Update()
     {
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + raycastLength, whatIsGround);
-        //bool IsGrounded()
-        //{
-        //    // Tarkista, onko hahmo maassa k‰ytt‰m‰ll‰ capsuleColliderin tietoja.
-        //    float colliderHeight = capsuleCollider.height * transform.localScale.y;
-        //    float rayLength = colliderHeight * 0.5f + 0.1f; // Pieni ylim‰‰r‰inen pituus turvallisuutta varten.
-
-        //    return Physics.Raycast(transform.position, Vector3.down, rayLength);
-        //}
+        
 
 
 
