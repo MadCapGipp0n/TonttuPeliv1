@@ -7,9 +7,9 @@ using UnityEngine.SceneManagement;
 // {
 //     public string scenename;
  
-//  void OnTriggerEnter(Collider other){
-//   if(other.CompareTag("Player")){
-//    SceneManager.LoadScene(scenename);
-//   }
-//  }
+//     void OnTriggerEnter(Collider other){
+//         if(other.CompareTag("Player")){
+//         SceneManager.LoadScene("2Kenttä", LoadSceneMode.Single);
+//         }
+//     }
 // }
