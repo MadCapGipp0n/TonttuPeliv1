@@ -13577,7 +13577,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 661875d4128336d41a9bd97cccc07643, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.184
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 661875d4128336d41a9bd97cccc07643, type: 3}
       propertyPath: m_LocalPosition.y
@@ -18454,7 +18454,7 @@ Transform:
   m_GameObject: {fileID: 1433726197}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.326, y: -0.476, z: 1.098}
+  m_LocalPosition: {x: 1.326, y: -0.402, z: 1.098}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -21548,7 +21548,7 @@ Transform:
   m_GameObject: {fileID: 1635036393}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.528, y: 0.222, z: 1.149}
+  m_LocalPosition: {x: 1.543, y: 0.222, z: 1.149}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -21577,10 +21577,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.22785193
-  m_Height: 0.45570385
+  m_Radius: 0.11
+  m_Height: 0.38524795
   m_Direction: 1
-  m_Center: {x: -0.18787867, y: 0.20804435, z: 0.050549865}
+  m_Center: {x: 0, y: 0.23811865, z: 0}
 --- !u!54 &1635036399
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -26063,7 +26063,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1929732717}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.21201204, y: 0, z: 0, w: 0.9772671}
+  m_LocalRotation: {x: 0.21201201, y: 0, z: 0, w: 0.9772671}
   m_LocalPosition: {x: 1.528, y: 1.222, z: -0.85099995}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -26444,8 +26444,8 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 10
   m_StandbyUpdate: 2
-  m_LookAt: {fileID: 1635036397}
-  m_Follow: {fileID: 1635036397}
+  m_LookAt: {fileID: 0}
+  m_Follow: {fileID: 0}
   m_CommonLens: 1
   m_Lens:
     FieldOfView: 40
