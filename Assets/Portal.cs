@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// public class nextscene : MonoBehaviour
-// {
-//     public string scenename;
+public class nextscene : MonoBehaviour
+{
+     public string scenename;
  
-//     void OnTriggerEnter(Collider other){
-//         if(other.CompareTag("Player")){
-//         SceneManager.LoadScene("2Kenttä", LoadSceneMode.Single);
-//         }
-//     }
-// }
+     void OnTriggerEnter(Collider other){
+         if(other.CompareTag("Player")){
+         SceneManager.LoadScene(2, LoadSceneMode.Single);
+        }
+     }
+ }
