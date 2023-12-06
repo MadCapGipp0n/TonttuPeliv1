@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class PickKey : MonoBehaviour
 {
+    void Update()
+    {
+        transform.Rotate(100f*Time.deltaTime,0f,0f, Space.Self); 
+    }
    public GameObject Hinge;
     
 
@@ -15,4 +19,6 @@ public class PickKey : MonoBehaviour
             Hinge.GetComponent<BoxCollider>().enabled = true; 
         }
     }
+   
 }
+
