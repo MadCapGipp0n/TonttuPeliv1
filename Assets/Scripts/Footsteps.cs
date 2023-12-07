@@ -13,6 +13,7 @@ public class Footsteps : MonoBehaviour
     public LayerMask whatIsGround;
     bool grounded;
     float raycastLength = -0.13f;
+    int delay = 1000;
 
     // Start is called before the first frame update
     void Start()
@@ -24,21 +25,9 @@ public class Footsteps : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + raycastLength, whatIsGround);
         
-
-
-
-        if (Input.GetKey("space"))
-        {
-            jumpsounds();
-        }
-        if (Input.GetKeyUp("space"))
-        {
-            StopJumpsounds();
-        }
-
-
+        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + raycastLength, whatIsGround);
+     
         if (Input.GetKey("w") & grounded)
         {
             footsteps();

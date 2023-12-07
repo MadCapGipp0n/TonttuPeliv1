@@ -17,6 +17,7 @@ public class PlayerMovementV1 : MonoBehaviour
     public float jumpCooldown;
     public float airMultiplier;
     bool readyToJump;
+    AudioSource jumpsound;
 
     [Header("Crouching")]
     public float crouchSpeed;
@@ -41,6 +42,8 @@ public class PlayerMovementV1 : MonoBehaviour
 
     public Transform orientation;
 
+    private Animator animator;
+
     float horizontalInput;
     float verticalInput;
 
@@ -59,28 +62,57 @@ public class PlayerMovementV1 : MonoBehaviour
 
     private void Start()
     {
+        animator = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
 
         readyToJump = true;
 
         startYScale = transform.localScale.y;
+        jumpsound = GetComponent<AudioSource>();
     }
 
     private void Update()
     {
         // ground check
-        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.1f, whatIsGround);
+        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.05f, whatIsGround);
 
         MyInput();
         SpeedControl();
         StateHandler();
 
+        if (grounded && horizontalInput != 0 || verticalInput != 0)
+        {
+            animator.SetBool("isMoving", true);
+            animator.SetBool("isJumping", false);
+            Debug.Log("Moving");
+        }
+        else
+        {
+            animator.SetBool("isMoving", false);
+        }
+
+        if (!grounded)
+        {
+            animator.SetBool("isJumping", true);
+            Debug.Log("airtime");
+        }
+        else
+        {
+            animator.SetBool("isJumping", false);
+        }
+
         // handle drag
         if (grounded)
+        {
             rb.drag = groundDrag;
+            Debug.Log("Grounded");
+        }
         else
+        {
             rb.drag = 0;
+        }
+            
     }
 
     private void FixedUpdate()
@@ -99,12 +131,13 @@ public class PlayerMovementV1 : MonoBehaviour
             readyToJump = false;
 
             Jump();
+            jumpsound.Play();
 
             Invoke(nameof(ResetJump), jumpCooldown);
         }
 
         // start crouch
-        if (Input.GetKeyDown(crouchKey))
+        /* (Input.GetKeyDown(crouchKey))
         {
             transform.localScale = new Vector3(transform.localScale.x, crouchYScale, transform.localScale.z);
             rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
@@ -114,7 +147,7 @@ public class PlayerMovementV1 : MonoBehaviour
         if (Input.GetKeyUp(crouchKey))
         {
             transform.localScale = new Vector3(transform.localScale.x, startYScale, transform.localScale.z);
-        }
+        }*/
     }
 
     private void StateHandler()
@@ -156,6 +189,7 @@ public class PlayerMovementV1 : MonoBehaviour
         if (OnSlope() && !exitingSlope)
         {
             rb.AddForce(GetSlopeMoveDirection() * moveSpeed * 20f, ForceMode.Force);
+            
 
             if (rb.velocity.y > 0)
                 rb.AddForce(Vector3.down * 45f, ForceMode.Force);
@@ -214,7 +248,7 @@ public class PlayerMovementV1 : MonoBehaviour
 
     private bool OnSlope()
     {
-        if (Physics.Raycast(transform.position, Vector3.down, out slopeHit, playerHeight * 0.5f + 0.1f))
+        if (Physics.Raycast(transform.position, Vector3.down, out slopeHit, playerHeight * 0.5f + 0.05f))
         {
             float angle = Vector3.Angle(Vector3.up, slopeHit.normal);
             return angle < maxSlopeAngle && angle != 0;
