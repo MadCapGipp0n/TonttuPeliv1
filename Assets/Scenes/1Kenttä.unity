@@ -9249,6 +9249,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4151725995838774856, guid: d26dc1241d332c342b898a57f1164932, type: 3}
   m_PrefabInstance: {fileID: 2016858503}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1494476191 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8018824306305768901, guid: 025d08c0f63edcc468f55c928ead9633, type: 3}
+  m_PrefabInstance: {fileID: 3011868730493588835}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9a74dba0213f5742a6bfead9c2c4a3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1519727105
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12554,11 +12565,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3514982408538499172, guid: 87b6467fd795479498d4ed3ba2fbcfa8, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000019073223
+      value: -0.000000019073283
       objectReference: {fileID: 0}
     - target: {fileID: 3514982408538499172, guid: 87b6467fd795479498d4ed3ba2fbcfa8, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000025073106
+      value: -0.0000000025073184
       objectReference: {fileID: 0}
     - target: {fileID: 3564812259810481087, guid: 87b6467fd795479498d4ed3ba2fbcfa8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12582,11 +12593,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3564812259810481087, guid: 87b6467fd795479498d4ed3ba2fbcfa8, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -3e-45
+      value: -1e-45
       objectReference: {fileID: 0}
     - target: {fileID: 3564812259810481087, guid: 87b6467fd795479498d4ed3ba2fbcfa8, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -1e-45
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4674053501524755145, guid: 87b6467fd795479498d4ed3ba2fbcfa8, type: 3}
       propertyPath: m_TrackedObjectOffset.y
@@ -12630,11 +12641,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8802988045713631646, guid: 87b6467fd795479498d4ed3ba2fbcfa8, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: -2.6292669e-24
       objectReference: {fileID: 0}
     - target: {fileID: 8802988045713631646, guid: 87b6467fd795479498d4ed3ba2fbcfa8, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 3.1824997e-23
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14672,6 +14683,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3533284099145501999, guid: 025d08c0f63edcc468f55c928ead9633, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1494476191}
+    - target: {fileID: 3533284099145501999, guid: 025d08c0f63edcc468f55c928ead9633, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToMainMenu
+      objectReference: {fileID: 0}
     - target: {fileID: 6932401480210261454, guid: 025d08c0f63edcc468f55c928ead9633, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -14751,6 +14770,14 @@ PrefabInstance:
     - target: {fileID: 6932401480210261454, guid: 025d08c0f63edcc468f55c928ead9633, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7676779571832315814, guid: 025d08c0f63edcc468f55c928ead9633, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1494476191}
+    - target: {fileID: 7676779571832315814, guid: 025d08c0f63edcc468f55c928ead9633, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: QuitGame
       objectReference: {fileID: 0}
     - target: {fileID: 8380675844135560419, guid: 025d08c0f63edcc468f55c928ead9633, type: 3}
       propertyPath: m_Name
@@ -16317,6 +16344,7 @@ SceneRoots:
   - {fileID: 963194228}
   - {fileID: 705507995}
   - {fileID: 1984941031}
+  - {fileID: 2071212738}
   - {fileID: 3011868730493588835}
   - {fileID: 1434013654766363099}
   - {fileID: 1171418616}
@@ -16394,7 +16422,6 @@ SceneRoots:
   - {fileID: 641734475}
   - {fileID: 850054184}
   - {fileID: 106020585}
-  - {fileID: 2071212738}
   - {fileID: 159073033}
   - {fileID: 1596091394}
   - {fileID: 184465185}
