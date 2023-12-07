@@ -135,6 +135,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 5222761538949168712, guid: 266c8b5cce3a07f4e915c65041c5486b, type: 3}
+      propertyPath: m_text
+      value: "\xC4L\xC4 PELAA!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7625010720990891162, guid: 266c8b5cce3a07f4e915c65041c5486b, type: 3}
+      propertyPath: m_text
+      value: 'PELAA!!
+
+'
+      objectReference: {fileID: 0}
     - target: {fileID: 8870407573685223394, guid: 266c8b5cce3a07f4e915c65041c5486b, type: 3}
       propertyPath: m_Pivot.x
       value: 0

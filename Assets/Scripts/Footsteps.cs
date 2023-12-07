@@ -13,7 +13,6 @@ public class Footsteps : MonoBehaviour
     public LayerMask whatIsGround;
     bool grounded;
     float raycastLength = -0.13f;
-    int delay = 1000;
 
     // Start is called before the first frame update
     void Start()
