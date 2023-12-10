@@ -11,10 +11,7 @@ public class OpenDoor: MonoBehaviour
     {
         keys = FindObjectOfType<PlayerMovementV1>();
     }
-
-    // && FindObjectOfType<Player>.KeyAmount >= 1) tarkistaa avaimet 
    
-    
     void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player") && Input.GetKey(KeyCode.E)&& keys.KeyAmount >= 1)

@@ -52,6 +52,7 @@ public class PlayerMovementV1 : MonoBehaviour
     Rigidbody rb;
 
     public int KeyAmount;
+    
 
     public MovementState state;
     public enum MovementState
@@ -275,5 +276,12 @@ public class PlayerMovementV1 : MonoBehaviour
             KeyAmount +=1;
             Destroy(other.gameObject);
         }
+
+        if(other.gameObject.tag== "Candy")
+        {
+            ScoreManager.score += 1;
+            Destroy(other.gameObject);
+        }
     }
+
 }
