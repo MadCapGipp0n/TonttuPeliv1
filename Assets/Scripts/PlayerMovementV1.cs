@@ -51,6 +51,8 @@ public class PlayerMovementV1 : MonoBehaviour
 
     Rigidbody rb;
 
+    public int KeyAmount;
+
     public MovementState state;
     public enum MovementState
     {
@@ -260,5 +262,14 @@ public class PlayerMovementV1 : MonoBehaviour
     private Vector3 GetSlopeMoveDirection()
     {
         return Vector3.ProjectOnPlane(moveDirection, slopeHit.normal).normalized;
+    }
+    //Avain osuus
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag=="Key")
+        {
+            KeyAmount +=1;
+            Destroy(other.gameObject);
+        }
     }
 }

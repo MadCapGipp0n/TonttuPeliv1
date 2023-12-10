@@ -7117,6 +7117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scenename: "2Kentt\xE4"
+  keys: {fileID: 1780330386}
 --- !u!1 &987513093 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5488916167195416812, guid: 56758fd6b7855bc45b42b48688354602, type: 3}
@@ -11077,6 +11078,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1780330386 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8103661918932121618, guid: 3731498e3291f654eb16ec6e4708d156, type: 3}
+  m_PrefabInstance: {fileID: 1434013654766363099}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 430331685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 664ffd1e096c9024991fb518f150afa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1781274583 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 407526, guid: d4f06407f06d8cf41b643015132cafca, type: 3}
@@ -13259,15 +13271,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 10ffc052a8e4bb8439b2ce53b6daf3a4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 344.583
+      value: 345.588
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 10ffc052a8e4bb8439b2ce53b6daf3a4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 29.779
+      value: 33.412
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 10ffc052a8e4bb8439b2ce53b6daf3a4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 413.603
+      value: 411.94
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 10ffc052a8e4bb8439b2ce53b6daf3a4, type: 3}
       propertyPath: m_LocalRotation.w
