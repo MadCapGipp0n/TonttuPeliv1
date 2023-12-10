@@ -133,7 +133,11 @@ public class PlayerMovementV1 : MonoBehaviour
             readyToJump = false;
 
             Jump();
-            jumpsound.Play();
+            if (!AudioTriggeri.isSpeaking)
+            {
+                jumpsound.Play();
+            }
+            
 
             Invoke(nameof(ResetJump), jumpCooldown);
         }

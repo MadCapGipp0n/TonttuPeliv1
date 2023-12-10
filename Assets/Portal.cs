@@ -11,7 +11,7 @@ public class nextscene : MonoBehaviour
      public PlayerMovementV1 keys;
  
      void OnTriggerEnter(Collider other){
-         if(other.CompareTag("Player")&& keys.KeyAmount >=1)
+         if(other.CompareTag("Player")&& keys.KeyAmount >=1 && !AudioTriggeri.isSpeaking)
         {
             keys.KeyAmount -=1;
             SceneManager.LoadScene(2, LoadSceneMode.Single);
