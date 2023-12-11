@@ -17,7 +17,10 @@ public class PlayerMovementV1 : MonoBehaviour
     public float jumpCooldown;
     public float airMultiplier;
     bool readyToJump;
-    AudioSource jumpsound;
+    AudioSource sound;
+    public AudioClip karkki‰‰ni;
+    public AudioClip jumpsound;
+
 
     [Header("Crouching")]
     public float crouchSpeed;
@@ -53,6 +56,7 @@ public class PlayerMovementV1 : MonoBehaviour
 
     public int KeyAmount;
     
+    
 
     public MovementState state;
     public enum MovementState
@@ -72,7 +76,10 @@ public class PlayerMovementV1 : MonoBehaviour
         readyToJump = true;
 
         startYScale = transform.localScale.y;
-        jumpsound = GetComponent<AudioSource>();
+        sound = GetComponent<AudioSource>();
+        
+        
+
     }
 
     private void Update()
@@ -136,7 +143,8 @@ public class PlayerMovementV1 : MonoBehaviour
             Jump();
             if (!AudioTriggeri.isSpeaking)
             {
-                jumpsound.Play();
+                sound.clip = jumpsound;
+                sound.Play();
             }
             
 
@@ -276,11 +284,14 @@ public class PlayerMovementV1 : MonoBehaviour
             KeyAmount +=1;
             Destroy(other.gameObject);
         }
-
-        if(other.gameObject.tag== "Candy")
+        if (other.CompareTag("Candy"))
         {
             ScoreManager.score += 1;
+            sound.clip = karkki‰‰ni;
+            sound.Play();
             Destroy(other.gameObject);
+
+
         }
     }
 
