@@ -11,7 +11,7 @@ public class ScoreManager : MonoBehaviour
     public Text highScoretext;
 
     public static int score;
-    public int highscore;
+    
 
      private void Awake()
     {
@@ -22,7 +22,7 @@ public class ScoreManager : MonoBehaviour
      void Start()
     {
          scoreText.text = "Score: " + Mathf.Round(score);
-        highScoretext.text = "HIGHSCORE: " + highscore.ToString();
+        
     }
 
      // Update is called once per frame
