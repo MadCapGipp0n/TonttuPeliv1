@@ -2418,7 +2418,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 65abd1b4b1c055340b6e1389bcc20ec2, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -3797,7 +3797,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d995b61927f63bf43a4f45934a019564, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.603
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -5703,7 +5703,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 3ec0a67c471ede849bcf1a3c0395ec9a, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -9321,7 +9321,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: cd821fe946073384abd7d92687833ed2, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.025
+  m_Volume: 0.023
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -12246,7 +12246,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4e00898c9cbf96e438bceaa3634fa04b, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.2
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -15888,6 +15888,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 4e00898c9cbf96e438bceaa3634fa04b, type: 3}
     - target: {fileID: 8103661918932121618, guid: 3731498e3291f654eb16ec6e4708d156, type: 3}
+      propertyPath: sprintSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8103661918932121618, guid: 3731498e3291f654eb16ec6e4708d156, type: 3}
       propertyPath: "karkki\xE4\xE4ni"
       value: 
       objectReference: {fileID: 8300000, guid: 65abd1b4b1c055340b6e1389bcc20ec2, type: 3}
@@ -17899,6 +17903,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 963194228}
   - {fileID: 705507995}
+  - {fileID: 1363773218}
   - {fileID: 1984941031}
   - {fileID: 2071212738}
   - {fileID: 3011868730493588835}
@@ -17939,7 +17944,6 @@ SceneRoots:
   - {fileID: 5734854007600321135}
   - {fileID: 8033190525279661344}
   - {fileID: 975273945}
-  - {fileID: 1363773218}
   - {fileID: 362403407}
   - {fileID: 6519833886244710531}
   - {fileID: 4654093930302538763}
