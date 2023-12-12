@@ -18,7 +18,7 @@ public class PlayerMovementV1 : MonoBehaviour
     public float airMultiplier;
     bool readyToJump;
     AudioSource sound;
-    public AudioClip karkki‰‰ni;
+    public AudioClip karkki√§√§ni;
     public AudioClip jumpsound;
 
 
@@ -287,7 +287,7 @@ public class PlayerMovementV1 : MonoBehaviour
         if (other.CompareTag("Candy"))
         {
             ScoreManager.score += 1;
-            sound.clip = karkki‰‰ni;
+            sound.clip = karkki√§√§ni;
             sound.Play();
             Destroy(other.gameObject);
 

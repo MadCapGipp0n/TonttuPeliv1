@@ -13,10 +13,7 @@ public class ScoreManager : MonoBehaviour
     public static int score;
     
 
-     private void Awake()
-    {
-        instance = this;
-    }
+     
     
 
      void Start()
@@ -26,9 +23,9 @@ public class ScoreManager : MonoBehaviour
     }
 
      // Update is called once per frame
-    public void AddPoint()
-    {
-         score += 1;
-         scoreText.text = score.ToString() + " POINTS";
-    }
+    // public void AddPoint()
+    // {
+    //      score += 1;
+    //      scoreText.text = score.ToString() + " POINTS";
+    // }
 }
